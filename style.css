@@ -1,0 +1,90 @@
+/*Zerando o CSS*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Fazendo a estrutura básica*/
+.game-board{
+    width: 100%;
+    height: 100vh;
+    border: 10px solid green;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+/*Configurando o tubo*/
+.pipe{
+    position: absolute; /*Ela não irá interferir nas outras*/
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear; /*Puxando a animação e a deixando infinita*/
+}
+
+/*Configurando o Mario*/
+.mario{
+    position: absolute;
+    width: 150px;
+    bottom: 0;
+}
+
+/*Configurando o jump do Mario*/
+.jump{
+    animation: mario-jump 500ms ease-out;
+}
+
+
+/*Configurando as nuvens*/
+.nuvens{
+    position: absolute;
+    width: 500px;
+    animation: clouds-animation 18s infinite linear;
+}
+
+/*Definindo a animção do tubo*/
+@keyframes pipe-animation{
+    from {
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/*Definindo a animação do pulo do Mario*/
+@keyframes mario-jump{
+    0%{ /*Ao invés de utilizar "from-to", podemos usar porcentagem para especificar o exato momento que queremos mexer*/
+        bottom: 0;
+    }
+
+    40%{
+        bottom: 180px;
+    }
+
+    50%{
+        bottom: 180px;
+    }
+
+    60%{
+        bottom: 180px;
+    }
+
+    100%{
+        bottom: 0;
+    }
+}
+
+/*Definindo a animação da nuvem*/
+@keyframes clouds-animation{
+    from{
+        right: -500px;
+    }
+
+    to{
+        right: 100%;
+    }
+}
